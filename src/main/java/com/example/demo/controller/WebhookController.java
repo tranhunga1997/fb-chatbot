@@ -43,6 +43,7 @@ public class WebhookController {
             return ResponseEntity.ok(challenge);
         } catch (MessengerVerificationException e) {
             logger.warn("Webhook verification failed: {}", e.getMessage());
+            System.out.println("Hello");
             return ResponseEntity.status(HttpStatus.FORBIDDEN).body(e.getMessage());
         }
     }
